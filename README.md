@@ -23,7 +23,7 @@ ln -s ~/.dotifles/.vimrc ~/.vimrc
 
 ## TODO list
 
-- Learn how to use defaults to record and restore System Preferences and other macOS configurations.
+- Learn how to use defaults to record and restore System Preferences and other linux configurations.
 - Organize these growing steps into multiple script files.
 - Automate symlinking and run script files with a bootstrapping tool like Dotbot.
 - Revisit the list in [`.zshrc`](.zshrc) to customize the shell.
