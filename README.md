@@ -4,10 +4,10 @@
 
 ```zsh
 # Use SSH (if set up)...
-git clone git@github.com:Adamocho/dotfiles.git ~/.dotfiles
+git clone git@github.com:Adamocho/WSL-dotfiles.git ~/.dotfiles
 
 # ...or use HTTPS and switch remotes later.
-git clone https://github.com/Adamocho/dotfiles.git ~/.dotfiles
+git clone https://github.com/Adamocho/WSL-dotfiles.git ~/.dotfiles
 ```
 
 2. Create symlinks in the Home directory to the real files in the repo.
