@@ -15,10 +15,10 @@ git clone https://github.com/Adamocho/WSL-dotfiles.git ~/.dotfiles
 ```zsh
 # Automating this process with a script or bootsrapping tool is a great idea
 
-ln -s ~/.dotfiles/.bashrc ~/.bashrc
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotifles/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles/.bashrc ~/.bashrc
+ln -sf ~/.dotfiles/.zshrc ~/.zshrc
+ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -sf ~/.dotifles/.vimrc ~/.vimrc
 ```
 
 ## TODO list
