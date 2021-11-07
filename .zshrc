@@ -1,6 +1,6 @@
-PROMPT='
-Dotfiles in 100 Seconds:
-%1~ $ '
+setopt PROMPT_SUBST ; PS1='[%n@%m %c$(__git_ps1 " (%s)")]\$ '
+
+source ~/.git-prompt.sh
 
 
 # There are amny other ways to customize yoru shell:

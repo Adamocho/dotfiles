@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -108,6 +110,8 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
+source ~/.git-prompt.sh
+
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
