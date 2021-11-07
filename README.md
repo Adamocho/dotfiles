@@ -19,6 +19,7 @@ ln -sf ~/.dotfiles/.bashrc ~/.bashrc
 ln -sf ~/.dotfiles/.zshrc ~/.zshrc
 ln -sf ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -sf ~/.dotifles/.vimrc ~/.vimrc
+ln -sf ~/.dotfiles/.git-prompt.sh ~/.git-prompt.sh
 ```
 
 ## TODO list
