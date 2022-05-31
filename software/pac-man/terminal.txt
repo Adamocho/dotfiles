@@ -2,6 +2,7 @@ python3
 feh
 vim
 htop
+cron
 neofetch
 timeshift
 binwalk
