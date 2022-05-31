@@ -1,0 +1,27 @@
+{ 
+    // Application settings
+    "workbench.startupEditor": "none",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', monospace",
+    "editor.fontSize": 12,
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 1,
+
+    "explorer.compactFolders": false,
+    "explorer.confirmDragAndDrop": false,
+    "editor.quickSuggestions": true,
+    "editor.quickSuggestionsDelay": 0,
+    
+    // Extenisons
+    "remote.SSH.showLoginTerminal": true,
+
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+
+    "gitlens.hovers.currentLine.over": "line",
+
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true
+}

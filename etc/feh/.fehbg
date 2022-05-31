@@ -1,0 +1,3 @@
+#!/bin/sh
+# Mind you need that graphic
+feh --no-fehbg --bg-scale '~/.config/wallpaper/wow-island.jpg' 

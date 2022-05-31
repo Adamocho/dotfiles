@@ -1,0 +1,9 @@
+python3
+feh
+vim
+htop
+neofetch
+timeshift
+binwalk
+plocate
+coreutils
