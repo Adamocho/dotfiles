@@ -1,10 +1,22 @@
-python3
-feh
-vim
+# Basic tools
+coreutils
 htop
+plocate
+tree
+
+# Text editors
+vi
+vim
+
+# Utility
 cron
-neofetch
 timeshift
 binwalk
-plocate
-coreutils
+
+# Programming
+python3
+clang
+
+# Other
+feh
+neofetch
