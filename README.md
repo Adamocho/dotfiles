@@ -1,5 +1,4 @@
-# Dotfiles
-
+![# Dotfiles](logo.svg)
 My Unix config files
 
 ## Installing
