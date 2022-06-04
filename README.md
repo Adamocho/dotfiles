@@ -1,15 +1,18 @@
-![# Dotfiles](logo.svg)
+![# Dotfiles](.github/logo.svg)
 My Unix config files
 
-## Installing
-
-For now both installing and uninstalling need to be done manually
+## Getting the repo
 
 ```sh
 git clone https://github.com/Adamocho/Dotfiles.git ~/.dotfiles
 ```
 
-## Uninstalling
+## Removing the repo
+
+Just delete the `.dotfiles` folder from the gui or using the terminal
+
+> NOTE:  
+> Be careful with the `rm` command, as it can make a lot of trouble
 
 ```sh
 rm -rf ~/.dotfiles
