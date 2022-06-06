@@ -18,10 +18,10 @@ git clone https://github.com/Adamocho/Dotfiles.git ~/.dotfiles
 
 ## Removing the repo
 
-Just delete the `.dotfiles` folder from the gui or using the terminal
+Just delete the `.dotfiles` folder from the GUI or using the terminal
 
 > NOTE:  
-> Be careful with the `rm` command, as it can make a lot of trouble
+> Be careful with the `rm` command, as it can cause some serious damage
 
 ```sh
 rm -rf ~/.dotfiles
@@ -58,7 +58,7 @@ Split in two, according to the way of installing
 
 The list of packages with direct links is located in the **software/manual/** directory
 
-It's purpose is to be a list of software that I use personally, located in one, easy to find, place.
+Its purpose is to be a list of software that I use personally, located in one, easy to find, place.
 
 Follow the links and from there install the packages by hand
 
