@@ -1,17 +1,17 @@
 #!/bin/sh
 
-[ 0 != $(id -u) ] && echo "This script must be run as root" && exit
+[ 0 != "$(id -u)" ] && echo "This script must be run as root" && exit
 
 SCRIPT_PATH=$(dirname "$0")
 MAN_PATH="$SCRIPT_PATH/../manpages"
-MAN_DIRS=$( find "$MAN_PATH"/* -type d -printf "%f " | xargs )
+MAN_DIRS=$( find "$MAN_PATH"/* -type d -not -empty -printf "%f " | xargs )
 
 for dir in $MAN_DIRS
 do
     read -p "Do you want to install manuals from /manpages/$dir? [Y/n] " ANSWER
 
     [ "$ANSWER" = y ] || [ -z "$ANSWER" ] && {
-        MANUALS=$( find "$MAN_PATH/$dir" -type f | xargs )
+        MANUALS=$( find "$MAN_PATH/$dir" -type f -printf "%p " | xargs )
 
         for man in $MANUALS
         do
