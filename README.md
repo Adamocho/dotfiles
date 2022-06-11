@@ -50,6 +50,10 @@ Do you want to install wallpaper? [Y/n] n
 NOTE: config omitted
 ```
 
+### Scripts
+
+Can be found in the `bin` directory
+
 ### Packages
 
 Split in two, according to the way of installing
