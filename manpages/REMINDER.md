@@ -6,11 +6,7 @@ A little reminder about the structure of manpages
 
 ```sh
 man man
-```
-
-OR
-
-```sh
+# OR 
 man man-pages
 ```
 
@@ -31,7 +27,6 @@ man man-pages
 ```
 manpages/
 ├── man1
-│   └── example_manpage.1
 ├── man2
 ├── man3
 ├── man4
@@ -39,5 +34,5 @@ manpages/
 ├── man6
 ├── man7
 ├── man8
-└── reminder.md
+└── REMINDER.md
 ```
