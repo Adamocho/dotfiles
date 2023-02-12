@@ -1,27 +1,47 @@
-{ 
-    // Application settings
-    "workbench.startupEditor": "none",
-    "workbench.iconTheme": "vscode-icons",
-    "workbench.colorTheme": "One Dark Pro Darker",
-    "editor.fontFamily": "'Fira Code', 'Source Code Pro', monospace",
-    "editor.fontSize": 12,
+{
+    // standard config
+    "editor.fontFamily": "'Fira Code', 'Source Code Pro', 'monospace'",
+    "editor.fontSize": 15,
     "editor.fontLigatures": true,
-    "window.zoomLevel": 1,
-
+    "editor.quickSuggestionsDelay": 0,
     "explorer.compactFolders": false,
     "explorer.confirmDragAndDrop": false,
-    "editor.quickSuggestions": true,
-    "editor.quickSuggestionsDelay": 0,
-    
-    // Extenisons
-    "remote.SSH.showLoginTerminal": true,
+    "workbench.startupEditor": "none",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0,
 
+    // langauge config
     "python.defaultInterpreterPath": "/usr/bin/python3",
 
-    "gitlens.hovers.currentLine.over": "line",
-
+    // vim config
+    "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useSystemClipboard": true,
     "vim.useCtrlKeys": true,
-    "vim.hlsearch": true
+    "vim.hlsearch": true,
+    "vim.smartcase": true,
+    "vim.autoindent": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["<C-d>"],
+            "after": ["<C-d>", "z", "z"]
+        },
+        {
+            "before": ["<C-u>"],
+            "after": ["<C-u>", "z", "z"]
+        },
+        {
+            "before": ["<C-f>"],
+            "after": ["<C-f>", "z", "z"]
+        },
+        {
+            "before": ["<C-b>"],
+            "after": ["<C-b>", "z", "z"]
+        }
+    ]
 }
