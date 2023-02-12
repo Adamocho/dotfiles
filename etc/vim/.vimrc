@@ -2,6 +2,10 @@
 
 call plug#begin('~/.vim/plugged')
 
+    Plug 'arcticicestudio/nord-vim'
+    Plug 'joshdick/onedark.vim'
+    Plug 'ghifarit53/tokyonight-vim'
+    Plug 'bluz71/vim-moonfly-colors'
     Plug 'glepnir/oceanic-material'
     Plug 'cocopon/iceberg.vim'
     Plug 'rafi/awesome-vim-colorschemes'
@@ -10,17 +14,13 @@ call plug#end()
 
 " }}}
 
-
 " MAPPINGS --------------------------------------------------------------- {{{
 
-
 " }}}
-
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
 
 " This will enable code folding.
-" zo/zc - open/close specific fold; zm/zr - open/close all folds;
 " Use the marker method of folding.
     augroup filetype_vim
         autocmd!
@@ -31,23 +31,19 @@ call plug#end()
      set termguicolors
     endif
 
+" }}}
 
+" STATUS LINE ------------------------------------------------------------ {{{
 
 " }}}
 
-
-" STATUS LINE & LOOK ----------------------------------------------------- {{{
-
-" Set the color scheme
 color oceanic_material
-
-" }}}
-
-" SETTINGS --------------------------------------------------------------- {{{
-
 
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
+
+" Enable playing with buffers - no saving when switching buffers
+set hidden
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
@@ -119,8 +115,5 @@ set wildmenu
 " Make wildmenu behave like similar to Bash completion.
 set wildmode=list:longest
 
-" There are certain files that we would never want to edit with Vim.
-" Wildmenu will ignore files with these extensions.
+" Wildmenu will ignore files with these extensions (no reason to open them)
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-" }}}
