@@ -1,20 +1,104 @@
+[alias]
+
+    # View commits in an abbreviated format.
+	l = log --pretty=oneline --graph --abbrev-commit
+
+    # View the current changes in short format.
+	s = status --short
+
+    # Display an exhaustive list of changes including code diff.
+	sv = status --verbose
+
+	# Pull in remote changes including all its submodules.
+	p = pull --recurse-submodules
+
+	# Clone a repository including all submodules.
+	c = clone --recursive
+
+[apply]
+
+	# Warn about whitespace errors and correct it while applying a patch.
+	whitespace = fix
+
+[branch]
+
+	# Show recently changed branches first.
+	sort = committerdate
+
+[color]
+
+	# Default since git version 1.8.4
+	ui = auto
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
 [user]
+
+	# Ends up in the 'autor' and 'committer' fields of commit objects.
 	email = 81510507+Adamocho@users.noreply.github.com
+
+	# Ends up in the 'autor' and 'committer' fields of commit objects.
 	name = Adam Oller
 
 [push]
+
+	# See https://git-scm.com/docs/git-config#git-config-pushdefault.
 	default = simple
 
+	# Push relevant annotated tags on 'git push'.
+	followTags = true
+
 [init]
-	defaultBranch = master
+
+	defaultBranch = main
 
 [core]
-	# editor = vim
-	# After installing the 'code' command in PATH
+
+	# The default code editor to use when needed.
 	editor = code --wait
 
-# Other possible Git configurations.
-# - Set the default editor (nano, VS Code, vim, etc.)
-# - Customize color output
-# - Create aliases (shortcuts for Git subcommands)
-# - Add enpoint shortcuts for commonly used URLs
+	# Ignore time difference index and the working tree.
+	trustctime = false
+
+	# Don't precompose on MacOS granting backward compatibility.
+	precomposeunicode = false
+
+	# Treat those types of whitespace usage as an error. 
+	# Both 'space-before-tab' and 'trailing-space' are set by defeault.
+	whitespace = indent-with-non-tab,space-before-tab,trailing-space
+
+[diff]
+
+	# Detect both file renames and copies.
+	renames = copies
+
+	# Get the smallest possible diff.
+	# Takes longer to execute, so for now it is disabled.
+	# algorithm = minimal
+
+[help]
+
+	# Fix and execute commands with a typo
+	autocorrect = 1
+
+[merge]
+
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
