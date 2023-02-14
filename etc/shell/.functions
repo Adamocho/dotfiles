@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Create and enter a directory
+function mkd() {
+    mkdir -p "$@" && cd "$_";
+}
+
+# Starts an HTTP server for 5 minutes
+# Shares a given location when given an argument or the current dir otherwise 
+function fileserver() {
+    if [[ -n "$1" ]]; then
+        timeout 5m python3 -m http.server 8421 -d "$1";
+    else
+        timeout 5m python3 -m http.server 8420;
+    fi
+}
+
+# Run `dig` and display the most useful info
+function digga() {
+	dig +nocmd "$1" any +multiline +noall +answer;
+}
+
+# The 'tree' command on steroids - lists hidden files except .git/node_modules,
+# listing dirs first, pipes into less with line numbers and colors when
+# the screen is too small to fit the output
+function tre() {
+	tree -aC -I '.git|node_modules' --dirsfirst "$@" | less -FRNX;
+}
+
