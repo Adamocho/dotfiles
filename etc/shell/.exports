@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+# Setting the default editor
+export EDITOR='vim';
+
+# Make Python use UTF-8 on output
+export PYTHONENCODING='UTF-8';
+
+# Increase shell history size to 10^4; the default is 500.
+export HISTSIZE='10000';
+export HISTFILESIZE="${HISTSIZE}";
+
+# Omit duplicates and entries that begin with space from history.
+export HISTCONTROL='ignoreboth';
+
+# Prefer US English and use UTF-8.
+export LANG='en_US.UTF-8';
+export LC_ALL='en_US.UTF-8';
+
+# Highlight manpage section titles.
+export LESS_TERMCAP_md="\e[1;33m"; # yellow
+
