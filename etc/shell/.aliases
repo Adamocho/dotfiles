@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# For easier navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias g="git"
+
+# Enable colored grep output
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# Get week number
+alias week='date +%V'
+
+# Update locate/plocate index file
+alias locup="sudo updatedb"
+
+alias keyscreen="screenkey --opacity 0.0 --key-mode translated --bak-mode normal --mods-mode emacs --font-size large"
+
+# Allow sudo-ed aliases
+alias sudo='sudo '
+
+# Print preety $PATH
+alias path='printf ${PATH//:/\\n}'
+
+# Aliases to dmenu
+alias dmenu="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFFFFF' -sf '#252932'"
+alias dmenu_run="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFFFFF' -sf '#252932'"
+
