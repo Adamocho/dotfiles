@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 [ 0 != "$(id -u)" ] && echo "This script must be run as root" && exit
 
@@ -8,9 +8,9 @@ MAN_DIRS=$( find "$MAN_PATH"/* -type d -not -empty -printf "%f " | xargs )
 
 for dir in $MAN_DIRS
 do
-    read -p "Do you want to install manuals from /manpages/$dir? [Y/n] " ANSWER
+    read -r -p "Do you want to install manuals from /manpages/$dir? [Y/n] "
 
-    [ "$ANSWER" = y ] || [ -z "$ANSWER" ] && {
+    [ "$REPLY" = y ] || [ -z "$REPLY" ] && {
         MANUALS=$( find "$MAN_PATH/$dir" -type f -printf "%p " | xargs )
 
         for man in $MANUALS
