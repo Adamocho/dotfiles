@@ -51,10 +51,7 @@
 
 [user]
 
-	# Ends up in the 'autor' and 'committer' fields of commit objects.
 	email = 81510507+Adamocho@users.noreply.github.com
-
-	# Ends up in the 'autor' and 'committer' fields of commit objects.
 	name = Adamocho
 
 [push]
