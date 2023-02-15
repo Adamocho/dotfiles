@@ -1,4 +1,4 @@
-![# Dotfiles](.github/logo.svg)
+![# Dotfiles](logo.svg)
 My Unix config files
 
 ## Table of content
