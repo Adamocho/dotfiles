@@ -3,10 +3,18 @@ coreutils
 htop
 plocate
 tree
+make
+wget
+curl
+git
+zsh
+bash
+man-db
 
 # Text editors
 vi
 vim
+nvim
 
 # Utility
 cron
@@ -16,6 +24,7 @@ binwalk
 # Programming
 python3
 clang
+gcc
 
 # Other
 feh

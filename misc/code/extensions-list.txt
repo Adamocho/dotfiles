@@ -1,6 +1,6 @@
-# A short list of vscode extensions I use
+# A short list of used vscode extensions
 
-# Look
+# Visuals
 One Dark Pro
 vscode-icons
 Fira Code font: https://fonts.google.com/specimen/Fira+Code
@@ -8,15 +8,15 @@ Fira Code font: https://fonts.google.com/specimen/Fira+Code
 # Utility
 GitHub Pull Requests and Issues
 GitLens - Git supercharged
-vim
+Vim
 Auto Rename Tag
 ES7 React/Redux/GraphQL/React-Native snippets
 Live Server
 Remote - SSH && WSL && Containers
 
 # Languages
-Pylance
-Python
+Python // Pylance
 C++
 C#
 Debugger for Unity && snippets
+Rust - rust-analyzer
