@@ -8,10 +8,14 @@ function mkd() {
 # Starts an HTTP server for 5 minutes
 # Shares a given location when given an argument or the current dir otherwise 
 function fileserver() {
+    local timeout="5m"
+    printf "Creating fileserver for %s\nShared directory: " "${timeout}" 
     if [[ -n "$1" ]]; then
-        timeout 5m python3 -m http.server 8421 -d "$1";
+        printf "%s\n" "$1" 
+        timeout ${timeout} python3 -m http.server 8421 -d "$1";
     else
-        timeout 5m python3 -m http.server 8420;
+        printf "%s\n" "${PWD}" 
+        timeout ${timeout} python3 -m http.server 8420;
     fi
 }
 
