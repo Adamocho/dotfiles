@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-OPTIONS='Search\nRandom\nExit'
+OPTIONS=$'Search\nRandom\nExit'
 RESULT=$(echo "$OPTIONS" | dmenu -i -p "Manpages options: ")
 
 case "$RESULT" in
