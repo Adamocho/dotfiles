@@ -1,6 +1,6 @@
 #!/bin/bash
 
-OPTIONS=$'Search\nRandom\nExit'
+OPTIONS=$'Search\nRandom\nExit\nHelp'
 RESULT=$(echo "$OPTIONS" | dmenu -i -p "Manpages options: ")
 
 case "$RESULT" in
@@ -13,6 +13,9 @@ case "$RESULT" in
         [ -n "$SECTION" ] && RES=$(find /usr/share/man/"$SECTION"/* -type f -printf "%f\n" | sed 's/\(.*\)\..*/\1/' | shuf | head -1)
         [ -n "$RES" ] && x-terminal-emulator -e man "$RES" > /dev/null
         ;;
+	Help)
+		x-terminal-emulator -e man man > /dev/null
+		;;
     *)
         exit;;
 esac
