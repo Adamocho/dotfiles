@@ -31,3 +31,13 @@ function tre() {
 	tree -aC -I '.git|node_modules' --dirsfirst "$@" | less -FRNX;
 }
 
+# Displays available aliases in dmenu
+function listalias() {
+	local res=$(compgen -A alias | dmenu)
+}
+
+# Displays available funcitons in dmenu
+function listfun() {
+	# Ignoring those with an underscore (mostly nvm functions)
+	local res=$(compgen -A function | grep -v "_" | dmenu)
+}
