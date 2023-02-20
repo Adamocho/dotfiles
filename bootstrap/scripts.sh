@@ -1,11 +1,12 @@
 #!/bin/bash
 
 SCRIPT_PATH=$(dirname "$0")
-SCRIPTS=$( find "$SCRIPT_PATH"/../bin/* -printf "%f " | xargs )
+SCRIPTS=$( find "${SCRIPT_PATH}/../bin/*" -printf "%f " | xargs )
+OUTPUT_DIR="~/.local/bin"
 
 for SCRIPT in $SCRIPTS
 do
-    cp -uiv "$SCRIPT_PATH/../bin/$SCRIPT" ~/.local/bin && {
+    cp -uiv "${SCRIPT_PATH}/../bin/${SCRIPT}" "${OUTPUT_DIR}" && {
         printf "\033[92mDONE\033[00m: script installed\n"
     } || {
         printf "\033[91mERROR\033[00m: installation failed\n"
