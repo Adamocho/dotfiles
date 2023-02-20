@@ -3,25 +3,32 @@
 [ 0 != "$(id -u)" ] && echo "This script must be run as root" && exit
 
 SCRIPT_PATH=$(dirname "$0")
-MAN_PATH="$SCRIPT_PATH/../manpages"
-MAN_DIRS=$( find "$MAN_PATH"/* -type d -not -empty -printf "%f " | xargs )
+MAN_PATH="${SCRIPT_PATH}/../manpages"
+MAN_DIRS=$( find "${MAN_PATH}"/* -type d -not -empty -printf "%f " | xargs )
+THE_MAN_DIR="/usr/share/man"
+REPLY="n"
 
 for dir in $MAN_DIRS
 do
-    read -r -p "Do you want to install manuals from /manpages/$dir? [Y/n] "
+    MANUALS=$( find "${MAN_PATH}/${dir}" -type f -printf "%p " | xargs )
 
-    [ "$REPLY" = y ] || [ -z "$REPLY" ] && {
-        MANUALS=$( find "$MAN_PATH/$dir" -type f -printf "%p " | xargs )
+    [ "${REPLY}" != Y ] && {
 
+        read -r -p "Install manpages from /manpages/${dir}? [Y(all)/y/n*/N(all)] "
+
+        [ "${REPLY}" = y ] || [ "${REPLY}" = Y ] && {
+            for man in $MANUALS
+            do
+                cp -uiv "${man}" "${THE_MAN_DIR}/${dir}"
+            done
+        } || {
+            [ "${REPLY}" = N ] && { echo "Exiting..."; exit 0; }
+            printf "\033[93mNOTE\033[00m: directory omitted\n"
+        }
+    } || { 
         for man in $MANUALS
         do
-            cp -ui "$man" /usr/share/man/"$dir" && {
-                printf "\033[92mDONE\033[00m: manuals added\n"
-            } || {
-                printf "\033[91mERROR\033[00m: installation failed\n"
-            }
+            cp -uiv "${man}" "${THE_MAN_DIR}/${dir}"
         done
-    } || {
-        printf "\033[93mNOTE\033[00m: directory omitted\n"
     }
 done
