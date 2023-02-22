@@ -15,11 +15,15 @@ man-db
 vi
 vim
 nvim
+nano
 
 # Utility
 cron
 timeshift
 binwalk
+strace
+ltrace
+tmux
 
 # Programming
 python3
