@@ -6,6 +6,7 @@ My Unix config files
 - [Removing the repo](#removing-the-repo)
 - [Installing](#installing)
     - [Configuration files](#configuration-files)
+    - [Manpages](#manpages)
     - [Packages](#packages)
         - [Manual](#manual)
         - [Automated](#automated)
@@ -18,10 +19,13 @@ git clone https://github.com/Adamocho/Dotfiles.git ~/.dotfiles
 
 ## Removing the repo
 
-Just delete the `.dotfiles` folder from the GUI or using the terminal
+Delete the `.dotfiles` folder from the GUI or using the terminal
 
 > NOTE:  
 > Be careful with the `rm` command, as it can cause some serious damage
+
+> NOTE 2:
+> Make sure there are no symlinks to the ~/.dotfiles repository that you aren't aware of. Otherwise, after removing the repo, those symlinks will become **broken**, and thus won't be of any use.
 
 ```sh
 rm -rf ~/.dotfiles
@@ -29,79 +33,81 @@ rm -rf ~/.dotfiles
 
 ## Installing
 
-The following section is split into segments according to what is needed
+The following section is split into segments according to what is needed. Most of the time there is an interactive script to install what one is in need of. 
+
+Make sure those scripts are executable or run them via shell.
+```sh
+# Example of executing a file
+~/.dotfiles/bootstrap/example_script.sh
+
+# Example of running a script via shell
+bash ~/.dotfiles/bootstrap/example_script.sh
+
+# Chmod +x to make the script executable
+chmod +x ~/.dotfiles/bootstrap/example_script.sh
+```
 
 ### Configuration files
+
+`./bootstrap/configure.sh`
+
+It copies everything from `.dotfiles/etc/` into `~/.config/` dir in the user's home directory.
 
 ```sh
 ~/.dotfiles/bootstrap/configure.sh
 ```
 
-The script is interactive and allows user to pick which folders are to be copied
+### Manpages
 
-Below is a fragment from the terminal
+`./bootstrap/manpages.sh`
 
-```
-Do you want to install git? [Y/n] 
-DONE: config installed
-Do you want to install vim? [Y/n] n
-NOTE: config omitted
-Do you want to install wallpaper? [Y/n] n
-NOTE: config omitted
-```
+Copies manpages in `bootstrap/manpages/*` to `/usr/share/man`.
+
+Read **manpages/REMINDER.md** for more info.
 
 ### Scripts
 
-Can be found in the `bin` directory
+`./bootstrap/scripts.sh`
+
+Copies the contents of `bin` to `~/.local/bin`.
 
 ### Packages
 
-Split in two, according to the way of installing
+Split in two, according to the way of installing.
 
 #### Manual
 
-The list of packages with direct links is located in the **software/manual/** directory
+The list of packages with direct links is located in the **software/manual/** directory.
 
-Its purpose is to be a list of software that I use personally, located in one, easy to find, place.
+Its purpose is to be a list of software to install, located in one, easy to find, place.
 
-Follow the links and from there install the packages by hand
+Follow the links and from there install the packages manually.
 
 #### Automated
 
-A little interactive script for managing packages.
+`./bootstrap/packages.sh` is a little interactive script for managing packages.
 
-The script will look for any files located inside **software/packages** directory. From there, it will prompt for each entry found, excluding blank lines and those starting with the comment `#` sign.
+The script will look for any files located inside **software/packages** directory. From there, it will prompt for each entry found, excluding blank lines and those starting with a comment (`#`).
 
-```
-Do you want to iterate through graphical.txt? [Y/n] n
-Do you want to iterate through terminal.txt? [Y/n] 
-Install coreutils? [Y/n] 
-DONE: package added
-Install htop? [Y/n] 
-DONE: package added
-Install plocate? [Y/n] 
-DONE: package added
-Install tree? [Y/n] 
-DONE: package added
-Install vim? [Y/n] n
-NOTE: package omitted
-Install cron? [Y/n] n
-NOTE: package omitted
-```
-
-As a result, `< ~/.config/packages_list.txt` file is created, containing a roaster of wanted software.
+As a result the `~/.config/packages_list.txt` file is created, which contains a list of chosen software.
 
 ```
 coreutils
 htop
 plocate
 tree
+[...]
 ```
 
 Now the last part is to pipe it to your package manager of choice. Examples below:
 
+```sh
+# To list available package managers
+which apt apt-get pacman dnf yum brew homebrew emerge
+```
+
 > NOTE:
-> The `-y` flag means "assume yes". In practice, it agrees on every prompt, saving some time
+> The `-y` flag means "assume yes". In practice, it agrees on every prompt saving time.
 
 apt
 ```sh
@@ -111,11 +117,6 @@ apt
 apt-get
 ```sh
 < ~/.config/packages_list.txt xargs sudo apt-get install -y
-```
-
-emerge
-```sh
-< ~/.config/packages_list.txt xargs sudo emerge
 ```
 
 pacman
@@ -141,4 +142,9 @@ brew
 homebrew
 ```sh
 < ~/.config/packages_list.txt xargs homebrew install
+```
+
+emerge
+```sh
+< ~/.config/packages_list.txt xargs sudo emerge
 ```
