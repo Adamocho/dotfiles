@@ -6,6 +6,7 @@ My Unix config files
 - [Removing the repo](#removing-the-repo)
 - [Installing](#installing)
     - [Configuration files](#configuration-files)
+    - [Dotfiles](#dotfiles)
     - [Manpages](#manpages)
     - [Packages](#packages)
         - [Manual](#manual)
@@ -56,6 +57,14 @@ It copies everything from `.dotfiles/etc/` into `~/.config/` dir in the user's h
 ```sh
 ~/.dotfiles/bootstrap/configure.sh
 ```
+
+### Dotfiles
+
+`./bootstrap/install.sh`
+
+It is a script for creating/updating symlinks from the repo to user's home directory.
+
+> NOTE: Before overwriting a real file, it is backed up in `~/.config/dotfiles_backup` dir.
 
 ### Manpages
 
