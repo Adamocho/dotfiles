@@ -11,6 +11,7 @@ My Unix config files
     - [Packages](#packages)
         - [Manual](#manual)
         - [Automated](#automated)
+- [`/bin` scripts](#bin-scripts)
 
 ## Getting the repo
 
@@ -157,3 +158,31 @@ emerge
 ```sh
 < ~/.config/packages_list.txt xargs sudo emerge
 ```
+
+## Bin scripts
+
+This section contains is a quick description for each script/binary in the `dotfiles/bin` directory.
+
+#### Git_templates.sh
+
+Dmenu script used for getting the right **.gitignore** template for one's needs.
+
+> NOTE: Templates come from github's gitignore repo: https://github.com/github/gitignore
+
+> SECOND NOTE: The script can also be run in the terminal for more debug (e.g. wget output)
+
+#### History.sh
+
+A brief script that enables one to see the history in dmenu and copy it to the clippboard.
+
+#### Kill.sh
+
+Another concise dmenu script about killing a chosen process
+
+> NOTE: It uses the `killall` command so it shall obliterate every process sharing the same name.
+
+#### Manuals.sh
+
+Yet another another dmenu script. It's purpose is to search a manpage or viewing a random one (for learning purposes). There is also the **Help** option for viewing the **man manpage** (which contains info about manpages structure, etc.).
+
+> NOTE: Manpages open in the default terminal `x-terminal-emulator`
