@@ -43,5 +43,8 @@
             "before": ["<C-b>"],
             "after": ["<C-b>", "z", "z"]
         }
-    ]
+    ],
+
+    // rust-analyzer config
+    "rust-analyzer.cargo.features": ["exercises"],
 }
