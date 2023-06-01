@@ -122,3 +122,4 @@ export NVM_DIR="$HOME/.nvm"
 source ~/.exports
 source ~/.aliases
 source ~/.functions
+

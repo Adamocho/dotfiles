@@ -183,7 +183,6 @@ if [ -f /etc/zsh_command_not_found ]; then
 fi
 
 # additional exports
-export PATH=/home/adam/.local/bin:$PATH
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -191,4 +190,5 @@ export NVM_DIR="$HOME/.nvm"
 
 source ~/.exports
 source ~/.aliases
+source ~/.zshenv
 source ~/.functions
