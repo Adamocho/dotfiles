@@ -1,0 +1,22 @@
+# List of useful programmes installed via cargo (rust toolchain)
+
+bacon
+bob-nvim
+du-dust
+evcxr_jupyter
+ripgrep
+openssl
+rtx-cli
+coreutils
+rust-analyzer
+sqlx
+sccache
+wiki-tui
+speedtest-rs
+tree-sitter # nvim
+ncspot # spotify
+cargo-info # crates.io in the terminal
+cargo-watch
+gitui # not used before
+mprocs # multiple terminals (like tmux)
+broot # FS navigation
