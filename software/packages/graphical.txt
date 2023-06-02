@@ -1,3 +1,11 @@
 audacity
 wireshark
 thunar
+firefox
+gparted
+gimp
+vlc
+blender
+filezilla
+krita
+ulauncher

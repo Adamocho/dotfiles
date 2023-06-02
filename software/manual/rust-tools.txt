@@ -1,4 +1,5 @@
 # List of useful programmes installed via cargo (rust toolchain)
+# Install with 'cargo install --locked xxx yyy etc.' 
 
 bacon
 bob-nvim

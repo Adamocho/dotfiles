@@ -24,6 +24,8 @@ binwalk
 strace
 ltrace
 tmux
+objdump
+openssl
 
 # Programming
 python3
