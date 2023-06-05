@@ -173,7 +173,7 @@ Dmenu script used for getting the right **.gitignore** template for one's needs.
 
 #### History.sh
 
-A brief script that enables one to see the history in dmenu and copy it to the clippboard.
+A brief script that enables one to see the history in dmenu and copy it to the clipboard.
 
 #### Kill.sh
 
