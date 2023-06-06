@@ -2,6 +2,7 @@
 # Install with 'cargo install --locked xxx yyy etc.' 
 
 bacon
+bat
 bob-nvim
 du-dust
 evcxr_jupyter
