@@ -133,9 +133,70 @@ call plug#end()
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
+" Set the <leader> to the spacebar (backslash if not set).
+let mapleader = " "
+
 " <C-u> and <C-d> keep view at the center (easier to follow code).
 nnoremap <C-u> <C-u>zz
 nnoremap <C-d> <C-d>zz
+
+" Mappings for fzf-vim.
+" Show buffers.
+nnoremap <leader>b :Buffers<CR>
+
+" List/Pick files (in $PWD).
+nnoremap <leader>f :Files<CR>
+
+" List git commits.
+nnoremap <leader>c :Commits<CR>
+
+" Choose from colorschemes.
+nnoremap <leader>C :Colors<CR>
+
+" Choose filetype for current buffer.
+nnoremap <leader>e :Filetypes<CR>
+
+" Normal mode mappings.
+nnoremap <leader>M :Maps<CR>
+
+" List marks.
+nnoremap <leader>m :Marks<CR>
+
+" List jumps.
+nnoremap <leader>j :Jumps<CR>
+
+" List windows - vsplit, hsplit, etc.
+nnoremap <leader>w :Windows<CR>
+
+" List GIT TAGS!
+nnoremap <leader>T :Tags<CR>
+
+" List vim tags.
+nnoremap <leader>t :BTags<CR>
+
+" Grep (ripgrep) in $PWD.
+nnoremap <leader>g :Rg<CR>
+
+" Git status.
+nnoremap <leader>s :GFiles?<CR>
+
+" Search lines in loaded buffers.
+nnoremap <leader>L :Lines<CR>
+
+" Search lines in current buffer.
+nnoremap <leader>l :BLines<CR>
+
+" Search in 'v:oldfiles' and open buffers.
+nnoremap <leader>H :History<CR>
+
+" Command history.
+nnoremap <leader>h: :History:<CR>
+
+" Search history.
+nnoremap <leader>h/ :History/<CR>
+
+" Show help tags (vimtutor pages and others).
+nnoremap <leader>h? :Helptags<CR>
 
 " }}}
 
