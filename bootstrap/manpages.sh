@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ 0 != "$(id -u)" ] && echo "This script must be run as root" && exit
+[ 0 != "$(id -u)" ] && { printf "This script must be run as root!\n"; exit; }
 
 SCRIPT_PATH=$(dirname "$0")
 MAN_PATH="${SCRIPT_PATH}/../manpages"
@@ -22,7 +22,7 @@ do
                 cp -uiv "${man}" "${THE_MAN_DIR}/${dir}"
             done
         } || {
-            [ "${REPLY}" = N ] && { echo "Exiting..."; exit 0; }
+            [ "${REPLY}" = N ] && { printf "Exiting...\n"; exit 0; }
             printf "\033[93mNOTE\033[00m: directory omitted\n"
         }
     } || { 

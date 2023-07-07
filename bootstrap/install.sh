@@ -17,14 +17,14 @@ GLOBAL_DOTFILES=$( find "${HOME}" -maxdepth 1 -type f -name ".*" -printf "%f\n" 
 TMP_FILE_LOCAL=$( mktemp tmp.XXXX -p "${TMP_DIR}")
 TMP_FILE_GLOBAL=$( mktemp tmp.XXXX -p "${TMP_DIR}")
 
-echo "$LOCAL_DOTFILES" | sort > "$TMP_FILE_LOCAL"
-echo "$GLOBAL_DOTFILES" | sort > "$TMP_FILE_GLOBAL"
+echo "${LOCAL_DOTFILES}" | sort > "${TMP_FILE_LOCAL}"
+echo "${GLOBAL_DOTFILES}" | sort > "${TMP_FILE_GLOBAL}"
 
-SWAPPABLE_FILES=$( comm -1 -2 "$TMP_FILE_LOCAL" "$TMP_FILE_GLOBAL" )
+SWAPPABLE_FILES=$( comm -1 -2 "${TMP_FILE_LOCAL}" "${TMP_FILE_GLOBAL}" )
 
 for file in $LOCAL_DOTFILES
 do
-    FOUND=$( echo "$SWAPPABLE_FILES" | grep -xc "$file" )
+    FOUND=$( echo "${SWAPPABLE_FILES}" | grep -xc "${file}" )
     [[ "${FOUND}" = 1 ]] && {
         printf "FOUND FILE MATCH\n"
         mv -iv "${HOME}/${file}" "${BACKUP_DIR}"
