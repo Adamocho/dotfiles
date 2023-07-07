@@ -120,12 +120,12 @@ call plug#begin('~/.vim/plugged')
 	Plug 'prabirshrestha/vim-lsp'
 	Plug 'mattn/vim-lsp-settings'
 	Plug 'prabirshrestha/asyncomplete.vim'
-	Plug 'prabirshrestha/asyncomplete.vim'
 	Plug 'Shougo/ddc.vim'
 	Plug 'shun/ddc-vim-lsp'
 	Plug 'bling/vim-bufferline'
 	Plug 'junegunn/fzf'
 	Plug 'junegunn/fzf.vim'
+	Plug 'airblade/vim-rooter'
 
 call plug#end()
 
