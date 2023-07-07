@@ -35,3 +35,5 @@ gcc
 # Other
 feh
 neofetch
+telnet
+screenkey
