@@ -21,10 +21,15 @@ git clone https://github.com/Adamocho/Dotfiles.git ~/.dotfiles
 
 ## Removing the repo
 
-Delete the `.dotfiles` folder from the GUI or using the terminal
+Delete the `.dotfiles` folder using GUI or via terminal.
 
 > NOTE:  
-> Be careful with the `rm` command, as it can cause some serious damage
+> Be careful with the `rm` command, as it can cause some serious damage. Double check with `ls` first.
+
+```bash
+ls [PATTERN] # or the same folder
+```
+If results match expectations, procede with `rm`.
 
 > NOTE 2:
 > Make sure there are no symlinks to the ~/.dotfiles repository that you aren't aware of. Otherwise, after removing the repo, those symlinks will become **broken**, and thus won't be of any use.
@@ -39,21 +44,22 @@ The following section is split into segments according to what is needed. Most o
 
 Make sure those scripts are executable or run them via shell.
 ```sh
-# Example of executing a file
-~/.dotfiles/bootstrap/example_script.sh
+# An example of executing a file
+~/.dotfiles/bootstrap/EXAMPLE_SCRIPT.sh
 
-# Example of running a script via shell
-bash ~/.dotfiles/bootstrap/example_script.sh
+# An example of running a script via shell
+bash ~/.dotfiles/bootstrap/EXAMPLE_SCRIPT.sh
 
 # Chmod +x to make the script executable
-chmod +x ~/.dotfiles/bootstrap/example_script.sh
+chmod +x ~/.dotfiles/bootstrap/EXAMPLE_SCRIPT.sh
 ```
 
 ### Configuration files
 
 `./bootstrap/configure.sh`
 
-It copies everything from `.dotfiles/etc/` into `~/.config/` dir in the user's home directory.
+For each folder found in `.dotfiles/etc` prompt to copy it to `~/.config` directory or not.
+> NOTE: Folders like **shell, vim, feh, git, tmux, xinit** are needn't to be copied. See `install.sh` down below.
 
 ```sh
 ~/.dotfiles/bootstrap/configure.sh
@@ -117,7 +123,7 @@ which apt apt-get pacman dnf yum brew homebrew emerge
 ```
 
 > NOTE:
-> The `-y` flag means "assume yes". In practice, it agrees on every prompt saving time.
+> The `-y` flag means "assume yes". In practice it saves time by agreeing on every prompt.
 
 apt
 ```sh
