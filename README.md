@@ -192,3 +192,9 @@ Another concise dmenu script about killing a chosen process
 Yet another another dmenu script. It's purpose is to search a manpage or viewing a random one (for learning purposes). There is also the **Help** option for viewing the **man manpage** (which contains info about manpages structure, etc.).
 
 > NOTE: Manpages open in the default terminal `x-terminal-emulator`
+
+#### Fetch.sh
+
+Show basic system information like **uptime**, **host**, **kernel**, **user**, **memory usage**, **editor**, **shell**, you know the drill.
+
+Simply execute the command, and voila.
