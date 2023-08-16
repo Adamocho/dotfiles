@@ -56,18 +56,18 @@ chmod +x ~/.dotfiles/bootstrap/EXAMPLE_SCRIPT.sh
 
 ### Configuration files
 
-`./bootstrap/configure.sh`
+`./bootstrap/install-modules.sh`
 
 For each folder found in `.dotfiles/etc` prompt to copy it to `~/.config` directory or not.
-> NOTE: Folders like **shell, vim, feh, git, tmux, xinit** are needn't to be copied. See `install.sh` down below.
+> NOTE: Folders like **shell, vim, feh, git, tmux, xinit** are needn't to be copied. See `install-dotfiles.sh` down below.
 
 ```sh
-~/.dotfiles/bootstrap/configure.sh
+~/.dotfiles/bootstrap/install-modules.sh
 ```
 
 ### Dotfiles
 
-`./bootstrap/install.sh`
+`./bootstrap/install-dotfiles.sh`
 
 It is a script for creating/updating symlinks from the repo to user's home directory.
 
@@ -75,7 +75,7 @@ It is a script for creating/updating symlinks from the repo to user's home direc
 
 ### Manpages
 
-`./bootstrap/manpages.sh`
+`./bootstrap/install-manpages.sh`
 
 Copies manpages in `bootstrap/manpages/*` to `/usr/share/man`.
 
@@ -83,9 +83,9 @@ Read **manpages/REMINDER.md** for more info.
 
 ### Scripts
 
-`./bootstrap/scripts.sh`
+`./bootstrap/install-scripts.sh`
 
-Copies the contents of `bin` to `~/.local/bin`.
+Copies the contents of `dotfiles/bin` to `~/.local/bin`.
 
 ### Packages
 
@@ -101,7 +101,7 @@ Follow the links and from there install the packages manually.
 
 #### Automated
 
-`./bootstrap/packages.sh` is a little interactive script for managing packages.
+`./bootstrap/create-packages-list.sh` is a little interactive script for managing packages.
 
 The script will look for any files located inside **software/packages** directory. From there, it will prompt for each entry found, excluding blank lines and those starting with a comment (`#`).
 
@@ -123,7 +123,7 @@ which apt apt-get pacman dnf yum brew homebrew emerge
 ```
 
 > NOTE:
-> The `-y` flag means "assume yes". In practice it saves time by agreeing on every prompt.
+> The `-y`, `--noconfirm`, etc. flag ommits the **yes/no** prompt.
 
 apt
 ```sh
@@ -137,7 +137,7 @@ apt-get
 
 pacman
 ```sh
-< ~/.config/packages_list.txt xargs sudo pacman -S
+< ~/.config/packages_list.txt xargs sudo pacman -S --noconfirm
 ```
 
 dnf
