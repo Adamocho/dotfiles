@@ -1,24 +1,24 @@
 # List of useful programmes installed via cargo (rust toolchain)
 # Install with 'cargo install --locked xxx yyy etc.' 
 
-bacon
-bat
-bob-nvim
-du-dust
+bacon # run, debug, test in one window
+bat # cat replacement
+bob-nvim # nvim versions
+du-dust # disk usage check
 evcxr_jupyter
-ripgrep
-openssl
-rtx-cli
-coreutils
-rust-analyzer
-sqlx
-sccache
-wiki-tui
-speedtest-rs
-tree-sitter # nvim
+ripgrep # better grep
+openssl # sll rewriten in rust
+rtx-cli # node version manager
+coreutils # rewriten in rust
+rust-analyzer # rust code lynting etc.
+sqlx # offline database checks + sql connections
+sccache # cache compile builds
+wiki-tui # wiki in the terminal
+speedtest-rs # speedtest in rust
+tree-sitter # nvim plugin
 ncspot # spotify
 cargo-info # crates.io in the terminal
 cargo-watch
-gitui # not used before
+gitui # UI for git
 mprocs # multiple terminals (like tmux)
 broot # FS navigation
