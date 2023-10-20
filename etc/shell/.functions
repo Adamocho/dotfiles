@@ -41,3 +41,18 @@ function listfun() {
 	# Ignoring those with an underscore (mostly nvm functions)
 	local res=$(compgen -A function | grep -v "_" | dmenu)
 }
+
+# Shortcut for activating python venv (just type dir name)
+function activate() {
+	source "./$@/bin/activate"
+}
+
+# Create a python3 venv in a specified directory and activate it
+function pyvenv() {
+	python3 -m venv "$@" && echo "Created venv: $_" 
+}
+
+# Same as above and activate it
+function pyvenvact() {
+	python3 -m venv "$@" && source "$_/bin/activate"
+}
