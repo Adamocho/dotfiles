@@ -10,6 +10,8 @@ alias .....="cd ../../../.."
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias g="git"
+alias ll="ls -Al --color=auto"
+alias la="ls -A --color=auto"
 
 # Enable colored grep output
 alias grep='grep --color=auto'
@@ -37,5 +39,5 @@ alias dmenu="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFF
 alias dmenu_run="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFFFFF' -sf '#252932'"
 
 # Vim aliases
+alias vim="nvim"
 alias vimrconf="vim $HOME/.vimrc"
-# alias vim="nvim"

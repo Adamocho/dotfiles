@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Setting the default editor
-export EDITOR='vim';
+export EDITOR='nvim';
 
 # Make Python use UTF-8 on output
 export PYTHONENCODING='UTF-8';

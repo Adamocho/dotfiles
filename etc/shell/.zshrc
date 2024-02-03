@@ -192,3 +192,6 @@ source ~/.exports
 source ~/.aliases
 source ~/.zshenv
 source ~/.functions
+
+# Haskell
+[ -f "/home/andy/.ghcup/env" ] && source "/home/andy/.ghcup/env" # ghcup-env

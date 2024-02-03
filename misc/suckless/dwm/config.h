@@ -1,10 +1,10 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
-static const unsigned int gappx     = 4;        /* gap pixel between windows */
-static const unsigned int snap      = 16;       /* snap pixel */
-static const int showbar            = 1;        /* 0 means no bar */
+static const unsigned int borderpx  = 0;        /* border pixel of windows */
+static const unsigned int gappx     = 0;        /* gap pixel between windows */
+static const unsigned int snap      = 5;       /* snap pixel */
+static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Fira Code:size=12", "monospace:size=12" };
 static const char dmenufont[]       = "Fira Code:size=12";
@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "uno", "dos", "tres", "quatro", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "ein", "zwei", "drei", "vier", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -28,8 +28,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       1,           -1 },
+	{ "Gimp",     NULL,       "Gimp",       0,            1,           -1 },
+	{ "Firefox",  NULL,       "Firefox",       1 << 8,       1,           -1 },
 };
 
 /* layout(s) */
@@ -40,8 +40,8 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
+	{ "[T]="      tile },    /* first entry is default */
+	{ "F[]",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 };
 
@@ -114,4 +114,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
