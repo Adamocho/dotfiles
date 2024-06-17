@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 SCRIPT_PATH=$(dirname "$0")
 PACKAGES_PATH="${SCRIPT_PATH}/../software/packages"

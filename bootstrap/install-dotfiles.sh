@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 SCRIPT_PATH=$( realpath "$0" | xargs dirname )
 CONFIG_PATH="${SCRIPT_PATH}/../etc"

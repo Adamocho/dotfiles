@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 SCRIPT_PATH=$(dirname "$0")
 SCRIPTS=$( find "${SCRIPT_PATH}/../bin/" -maxdepth 1 -type f)

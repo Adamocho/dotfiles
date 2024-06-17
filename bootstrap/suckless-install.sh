@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 SOFTWARE="dwm dmenu"
 DWM_LINK="https://dl.suckless.org/dwm/dwm-6.4.tar.gz"

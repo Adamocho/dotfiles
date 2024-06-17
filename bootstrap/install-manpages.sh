@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 [ 0 != "$(id -u)" ] && { printf "This script must be run as root!\n"; exit; }
 

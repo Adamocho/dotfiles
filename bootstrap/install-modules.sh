@@ -1,4 +1,4 @@
-#!/bin/sh
+#! /usr/bin/env bash
 
 SCRIPT_PATH=$(dirname "$0")
 MODULES=$( ls "${SCRIPT_PATH}/../etc" | xargs )
