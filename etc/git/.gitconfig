@@ -69,7 +69,7 @@
 [core]
 
 	# The default code editor to use when needed.
-	editor = code --wait
+	editor = codium --wait
 
 	# Ignore time difference index and the working tree.
 	trustctime = false

@@ -123,3 +123,38 @@ source ~/.exports
 source ~/.aliases
 source ~/.functions
 
+# Include links to rtx-cli (rust asdf clone)
+# START OF RTX-CLI #
+export RTX_SHELL=bash
+
+rtx() {
+  local command
+  command="${1:-}"
+  if [ "$#" = 0 ]; then
+    command rtx
+    return
+  fi
+  shift
+
+  case "$command" in
+  deactivate|s|shell)
+    # if argv doesn't contains -h,--help
+    if [[ ! " $@ " =~ " --help " ]] && [[ ! " $@ " =~ " -h " ]]; then
+      eval "$(command rtx "$command" "$@")"
+      return $?
+    fi
+    ;;
+  esac
+  command rtx "$command" "$@"
+}
+
+_rtx_hook() {
+  local previous_exit_status=$?;
+  eval "$(rtx hook-env -s bash)";
+  return $previous_exit_status;
+};
+if [[ ";${PROMPT_COMMAND:-};" != *";_rtx_hook;"* ]]; then
+  PROMPT_COMMAND="_rtx_hook${PROMPT_COMMAND:+;$PROMPT_COMMAND}"
+fi
+# END OF RTX-CLI #
+
