@@ -2,4 +2,4 @@
 
 # Use `stowing` to manage some dotfiles
 
-stow -v -d ~/dotfiles .config/ .local/
+stow -v --stow .config .local

@@ -3,7 +3,7 @@
 # Startup script
 
 # Wallpaper
-wbg ~/.config/hypr/thewall.jpg &
+wbg ~/.config/river/thewall.jpg &
 
 # Network applet
 nm-applet --indicator &
@@ -13,4 +13,3 @@ waybar &
 
 # Notification deamnon
 dunst
-
