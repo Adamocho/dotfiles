@@ -10,7 +10,6 @@
     ],
     "modules-center": ["river/window"],
     "modules-right": [
-    	"idle_inhibitor",
 	"pulseaudio",
 	"network",
 	"cpu",
@@ -25,13 +24,6 @@
     "river/window": {
         "format": "{}",
 	"max-length": 45
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "On",
-            "deactivated": "Off"
-        }
     },
     "tray": {
         // "icon-size": 21,
