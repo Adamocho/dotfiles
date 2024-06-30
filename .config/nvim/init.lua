@@ -1,2 +1,3 @@
-require("adamocho")
-
+require "options"
+require "plugins"
+require "remaps"

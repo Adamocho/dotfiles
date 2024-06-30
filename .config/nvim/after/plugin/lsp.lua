@@ -1,36 +1,47 @@
-local lsp = require('lsp-zero')
+local on_attach = function(_, bufnr)
 
-lsp.preset("recommended")
+  local bufmap = function(keys, func)
+    vim.keymap.set("n", keys, func, { buffer = bufnr })
+  end
 
-require('mason').setup({
-  ensure_installed = {'tsserver', 'rust_analyzer'},
-  handlers = {
-    lsp.default_setup,
-    lua_ls = function()
-      local lua_opts = lsp.nvim_lua_ls()
-      require('lspconfig').lua_ls.setup(lua_opts)
-    end,
-  }
+  bufmap("<leader>r", vim.lsp.buf.rename)
+  bufmap("<leader>a", vim.lsp.buf.code_action)
+
+  bufmap("gd", vim.lsp.buf.definition)
+  bufmap("gD", vim.lsp.buf.declaration)
+  bufmap("gI", vim.lsp.buf.implementation)
+  bufmap("<leader>D", vim.lsp.buf.type_definition)
+
+  bufmap("K", vim.lsp.buf.hover)
+
+  vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+    vim.lsp.buf.format()
+  end, {})
+end
+
+-- before cmp_nvim_lsp
+-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+require("mason").setup()
+require("mason-lspconfig").setup_handlers({
+	function(server_name)
+		require("lspconfig")[server_name].setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+		}
+	end,
+
+	["lua_ls"] = function()
+		require("neodev").setup()
+		require("lspconfig").lua_ls.setup {
+			on_attach = on_attach,
+			capabilities = capabilities,
+			Lua = {
+				workspace = { checkThridParty = false },
+				telemetry = { enable = false },
+			},
+		}
+	end
 })
 
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-
-cmp.setup({
-  sources = {
-    {name = 'path'},
-    {name = 'nvim_lsp'},
-    {name = 'nvim_lua'},
-    {name = 'luasnip', keyword_length = 2},
-    {name = 'buffer', keyword_length = 3},
-  },
-  formatting = lsp.cmp_format(),
-  mapping = cmp.mapping.preset.insert({
-    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-    ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-    ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-    ['<C-Space>'] = cmp.mapping.complete(),
-  }),
-})
-
-lsp.set_preferences({ sign_icons = {} })
