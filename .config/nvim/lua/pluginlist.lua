@@ -24,7 +24,15 @@ return {
 	},
 
 	-- Some additional tools
-	"nvim-telescope/telescope.nvim",
+
+	-- slow telescope
+    "nvim-telescope/telescope.nvim",
+	-- fast telescope
+	-- {
+	-- 	"nvim-telescope/telescope-fzf-native.nvim",
+	-- 	build = "make",
+	-- },
+
 
 	{
 		"nvim-treesitter/nvim-treesitter",
