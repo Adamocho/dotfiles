@@ -6,6 +6,9 @@ riverctl map normal Super+Shift Return spawn alacritty
 # Bemenu spawn
 riverctl map normal Alt P spawn 'bemenu-run -i -H 25 --fn "Fira Code" --binding vim --vim-esc-exit'
 
+# Lock screen
+riverctl map normal Alt+Shift L spawn swaylock
+
 # Super+Q to close the focused view
 riverctl map normal Super C close
 
