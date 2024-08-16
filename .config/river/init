@@ -139,9 +139,10 @@ rivertile -view-padding 2 -outer-padding 2 &
 # Hiding the bar
 riverctl map normal Super B spawn killall -SIGUSR1 waybar
 
+# announce a running river session to systemd
+#exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP &
+#exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=river &
+
 # Custom config
 bash ~/.config/river/start.sh
-
-
-
 
