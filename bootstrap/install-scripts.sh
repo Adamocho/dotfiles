@@ -1,8 +1,10 @@
 #! /usr/bin/env bash
 
 SCRIPT_PATH=$(dirname "$0")
-SCRIPTS=$( find "${SCRIPT_PATH}/../bin/" -maxdepth 1 -type f)
+SCRIPTS=$( find "${SCRIPT_PATH}/../.local/bin/" -maxdepth 1 -type f)
 OUTPUT_DIR="${HOME}/.local/bin"
+
+mkdir "${OUTPUT_DIR}"
 
 for SCRIPT in $SCRIPTS
 do
