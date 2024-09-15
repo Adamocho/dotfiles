@@ -1,4 +1,95 @@
+[init]
+
+	defaultBranch = main
+
+[core]
+
+	# The default code editor to use when needed.
+	editor = codium --wait
+
+	# Ignore time difference index and the working tree.
+	trustctime = false
+
+	# Don't precompose on MacOS granting backward compatibility.
+	precomposeunicode = false
+
+	# Treat those types of whitespace usage as an error. 
+	# Both 'space-before-tab' and 'trailing-space' are set by defeault.
+	whitespace = indent-with-non-tab,space-before-tab,trailing-space
+
+[user]
+
+	email = 81510507+Adamocho@users.noreply.github.com
+	name = Adamocho
+
+; Use a specific config when inside work/oss directories
+; [IncludeIf "gitdir:~/projects/work"]
+;     path = ~/projects/work/.gitconfig
+;
+; [IncludeIf "gitdir:~/projects/oss"]
+;     path = ~/projects/oss/.gitconfig
+
+[branch]
+
+	# Show recently changed branches first.
+	sort = -committerdate
+
+[column]
+	ui = auto
+
+[push]
+
+	# See https://git-scm.com/docs/git-config#git-config-pushdefault.
+	default = simple
+
+	# Push relevant annotated tags on 'git push'.
+	followTags = true
+
+[diff]
+
+	# Detect both file renames and copies.
+	renames = copies
+
+	# Get the smallest possible diff.
+	# Takes longer to execute, so for now it is disabled.
+	# algorithm = minimal
+
+[merge]
+
+	# Include summaries of merged commits in newly created merge commit messages
+	log = true
+
+# REuse REcorded REsolution - store resolved merge conflicts for doing it faster next time
+[rerere]
+    enabled = true
+
+[help]
+
+	# DO NOT Fix and execute commands with a typo
+    # It could mess something up
+	autocorrect = 0
+
 [alias]
+
+    # Cool stuff from FOSDEM 2024
+    ;git blame -w -C -C -C -L :Object:path/to/file # heuristic
+    ;git blame -w -C -C -C -L 15,28 path/to/file # range
+    wblame = blame -w -C -C -C -L
+
+    # Show specific line changes, when deleted, when created
+    ;git log -S regex -p # or --pickaxe-all
+
+    # Show what happened since you cloned the repo on your system
+    ;git reflog
+
+    # Word diff for better change tracking
+    ;git diff --word-diff
+    
+    # push --force-with-lease is just better and safer
+    ;git push --force-with-lease
+    
+    # Use on busy repos for specific commands speed up
+    ;git maintenance start
 
     # View commits in an abbreviated format.
 	l = log --pretty=oneline --graph --abbrev-commit
@@ -15,15 +106,10 @@
 	# Clone a repository including all submodules.
 	c = clone --recursive
 
-[apply]
-
-	# Warn about whitespace errors and correct it while applying a patch.
-	whitespace = fix
-
-[branch]
-
-	# Show recently changed branches first.
-	sort = committerdate
+    # Stash all every time
+    # All ingored/untracked files are also stashed.
+    # `git clean` cleans everything up.
+    staash = stash --all
 
 [color]
 
@@ -49,53 +135,6 @@
 	changed = green
 	untracked = cyan
 
-[user]
-
-	email = 81510507+Adamocho@users.noreply.github.com
-	name = Adamocho
-
-[push]
-
-	# See https://git-scm.com/docs/git-config#git-config-pushdefault.
-	default = simple
-
-	# Push relevant annotated tags on 'git push'.
-	followTags = true
-
-[init]
-
-	defaultBranch = main
-
-[core]
-
-	# The default code editor to use when needed.
-	editor = codium --wait
-
-	# Ignore time difference index and the working tree.
-	trustctime = false
-
-	# Don't precompose on MacOS granting backward compatibility.
-	precomposeunicode = false
-
-	# Treat those types of whitespace usage as an error. 
-	# Both 'space-before-tab' and 'trailing-space' are set by defeault.
-	whitespace = indent-with-non-tab,space-before-tab,trailing-space
-
-[diff]
-
-	# Detect both file renames and copies.
-	renames = copies
-
-	# Get the smallest possible diff.
-	# Takes longer to execute, so for now it is disabled.
-	# algorithm = minimal
-
-[help]
-
-	# Fix and execute commands with a typo
-	autocorrect = 1
-
-[merge]
-
-	# Include summaries of merged commits in newly created merge commit messages
-	log = true
+[maintenance]
+	repo = /etc/nixos
+	repo = /home/adam/oss/primal
