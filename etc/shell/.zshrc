@@ -184,14 +184,15 @@ fi
 
 # additional exports
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-source ~/.exports
+#source ~/.exports
 source ~/.aliases
-source ~/.zshenv
+#source ~/.zshenv
 source ~/.functions
 
 # Haskell
-[ -f "/home/andy/.ghcup/env" ] && source "/home/andy/.ghcup/env" # ghcup-env
+#[ -f "/home/andy/.ghcup/env" ] && source "/home/andy/.ghcup/env" # ghcup-env
+
