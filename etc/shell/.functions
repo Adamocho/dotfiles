@@ -5,6 +5,13 @@ function mkd() {
     mkdir -p "$@" && cd "$_";
 }
 
+# Update man-cache for Nixos
+function updatemancache() {
+    set -x
+    sudo mkdir -p /var/cache/man/nixos || return 1;
+    sudo mandb || return 1;
+}
+
 # Starts an HTTP server for 5 minutes
 # Shares a given location when given an argument or the current dir otherwise 
 function fileserver() {
