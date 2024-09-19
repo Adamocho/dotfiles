@@ -77,19 +77,22 @@
     wblame = blame -w -C -C -C -L
 
     # Show specific line changes, when deleted, when created
-    ;git log -S regex -p # or --pickaxe-all
+    pickaxe = log --pickaxe-all -S # regex
 
     # Show what happened since you cloned the repo on your system
-    ;git reflog
+    reflogs = reflog show --all
 
     # Word diff for better change tracking
-    ;git diff --word-diff
+    wdiff = diff --word-diff
     
     # push --force-with-lease is just better and safer
     ;git push --force-with-lease
+    forcepush = push --force-with-lease
     
     # Use on busy repos for specific commands speed up
     ;git maintenance start
+    maintain = maintenance start
+    unmaintain = maintenance stop
 
     # View commits in an abbreviated format.
 	l = log --pretty=oneline --graph --abbrev-commit
