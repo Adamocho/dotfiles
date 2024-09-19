@@ -9,6 +9,7 @@ alias .....="cd ../../../.."
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
+alias dc="cd ~/Documents"
 alias g="git"
 alias ll="ls -Al --color=auto"
 alias la="ls -A --color=auto"
@@ -18,6 +19,7 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
+
 alias ip='ip --color=auto'
 
 # Get week number
@@ -26,6 +28,7 @@ alias week='date +%V'
 # Update locate/plocate index file
 alias locup="sudo updatedb"
 
+# For showing the keys pressed
 alias keyscreen="screenkey --opacity 0.0 --key-mode translated --bak-mode normal --mods-mode emacs --font-size large"
 
 # Allow sudo-ed aliases
@@ -38,6 +41,8 @@ alias path='printf ${PATH//:/\\n}'
 alias dmenu="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFFFFF' -sf '#252932'"
 alias dmenu_run="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '#FFFFFF' -sf '#252932'"
 
-# Vim aliases
-alias vim="nvim"
+# Vim/Nvim aliases
+#alias vim="nvim"
 alias vimrconf="vim $HOME/.vimrc"
+alias nvimconf="vim $HOME/.config/nvim"
+
