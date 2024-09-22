@@ -1,6 +1,8 @@
-# ~/.zshrc file for zsh interactive shells.
-# see /usr/share/doc/zsh/examples/zshrc for examples
+# Copyright Adamocho@github
+# under MIT License
+# ~/.zshrc for the zsh shell
 
+# Basic config
 setopt autocd              # change directory just by typing its name
 #setopt correct            # auto correct mistakes
 setopt interactivecomments # allow comments in interactive mode
@@ -30,7 +32,8 @@ bindkey '^[[Z' undo                               # shift + tab undo last action
 
 # enable completion features
 autoload -Uz compinit
-compinit -d ~/.cache/zcompdump
+# compinit -d ~/.cache/zcompdump
+compinit
 zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case insensitive tab completion
 
