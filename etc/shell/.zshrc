@@ -49,6 +49,14 @@ setopt hist_verify            # show command with history expansion to user befo
 # it makes displaying last n commands impossible
 #alias history="history 0"
 
+# Some fun stuff regarding command history:
+# use !! to execute the last one;
+# use !n - where n is an integer to execute the n-th command from history;
+# use !-n to execute the last n-th command (the last 5th command executed);
+# Ctrl-r to search history (Ctrl-r or backspace for next/previous result)
+# and use arrows to change your chosen history command
+# use ^old^new^ to correct a last command typo (with enter to execute, space to edit)
+
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
