@@ -63,3 +63,10 @@ function pyvenv() {
 function pyvenvact() {
 	python3 -m venv "$@" && source "$_/bin/activate"
 }
+
+# Load image to docker
+# It always rebuilds the image
+function dockload() {
+    docker load < $(nix-build "${1}")
+}
+
