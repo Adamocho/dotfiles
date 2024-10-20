@@ -5,13 +5,13 @@
   "showAttachments": true,
   "hideUnresolved": false,
   "showOrphans": false,
-  "collapse-color-groups": false,
+  "collapse-color-groups": true,
   "colorGroups": [
     {
-      "query": "file:Book",
+      "query": "tag:#linux  ",
       "color": {
         "a": 1,
-        "rgb": 2801799
+        "rgb": 14069084
       }
     }
   ],

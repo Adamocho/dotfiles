@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "83b66a31d1d9526c",
+        "id": "3bc0777050bc8313",
         "type": "tabs",
         "children": [
           {
-            "id": "671547b074336908",
+            "id": "304744ae9a15600d",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -44,7 +44,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#book",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 201.5
+    "width": 269.5
   },
   "right": {
     "id": "4756231f896d9df8",
@@ -118,7 +118,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Untitled.md"
+              }
             }
           }
         ]
@@ -139,26 +141,30 @@
       "random-note:Open random note": false
     }
   },
-  "active": "671547b074336908",
+  "active": "730385925bfd5cf0",
   "lastOpenFiles": [
-    "something I got today.md",
-    "River window manager for Wayland.md",
-    "dwm.md",
-    "6 - Zettelkasten/Tee.md",
-    "3 - Tags/Linux.md",
-    "3 - Tags/Bookseries.md",
-    "3 - Tags/Book.md",
-    "2 - Material/books/The Song of Ice and Fire.md",
+    "Untitled.md",
+    "Marcus Aurelius - The art of Stoicism.md",
+    "Something is rea.md",
+    "2 - Material/books/The Meditations by Markus Aurelius.md",
     "2 - Material/books/The Game of Thrones.md",
-    "2 - Material/books/A Dance with Dragons.md",
+    "4 - Indexes/Book.md",
+    "2 - Material/books/The Song of Ice and Fire.md",
     "2 - Material/books/The Clash of Kings.md",
     "2 - Material/books/A Storm of Swords.md",
     "2 - Material/books/A Feast for Crows.md",
+    "2 - Material/books/A Dance with Dragons.md",
+    "4 - Indexes/Linux.md",
+    "4 - Indexes/Bookseries.md",
+    "1 - Zettelkasten/River window manager for Wayland.md",
+    "1 - Zettelkasten/dwm.md",
+    "1 - Zettelkasten/Tee.md",
+    "something I got today.md",
     "2 - Material/books",
     "Untitled.canvas",
     "5 - Templates/Common Note.md",
     "5 - Templates",
-    "6 - Zettelkasten",
+    "1 - Zettelkasten",
     "4 - Indexes",
     "3 - Tags",
     "2 - Material",
