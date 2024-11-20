@@ -9,3 +9,6 @@ export RUSTC_WRAPPER=$(which sccache)
 # For alacritty cursor support
 export XCURSOR_SIZE=24
 export XCURSOR_THEME='Adwaita'
+
+# Man use nvim as pager
+export MANPAGER='nvim +Man!'
