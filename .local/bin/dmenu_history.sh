@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 result=$( dmenu -i -l 26 -p "History command to copy: " < "${HOME}/.zsh_history" )
 

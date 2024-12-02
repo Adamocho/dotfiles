@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 SESSION="rust-dev"
 SESSIONEXISTS=$(tmux list-sessions | grep $SESSION)

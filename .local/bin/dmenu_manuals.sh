@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 OPTIONS=$'Search\nRandom\nExit\nHelp'
 RESULT=$(echo "$OPTIONS" | dmenu -i -p "Manpages options: ")

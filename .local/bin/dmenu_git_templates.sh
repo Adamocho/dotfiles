@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 REPO_ADDRESS="https://github.com/github/gitignore"
 FILE_ADDRESS="https://github.com/github/gitignore/raw/main"

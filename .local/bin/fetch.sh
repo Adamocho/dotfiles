@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 HOSTNAME=$( uname -n )
 KERNEL_VERSION=$( uname -r ) # | cut -d '-' -f1 )

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/bin/env bash
 
 result=$( ps -e -o comm= | dmenu -i -l 20 -p "Process to kill: " )
 
