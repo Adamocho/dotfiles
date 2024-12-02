@@ -10,6 +10,7 @@ function updatemancache() {
     set -x
     sudo mkdir -p /var/cache/man/nixos || return 1;
     sudo mandb || return 1;
+    echo "Cashes rebuilt successfully!"
 }
 
 # Starts an HTTP server for 5 minutes
