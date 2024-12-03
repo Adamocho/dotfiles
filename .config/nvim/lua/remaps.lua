@@ -22,6 +22,7 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
+-- better deletion
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
 -- automatic formating
@@ -41,6 +42,9 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 -- make file executable
--- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = false })
 
+-- fast file sourcing after making changes
+vim.keymap.set("n", "<leader><leader>", function()
+    vim.cmd("source")
+end)
