@@ -24,6 +24,9 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
 
+-- automatic formating
+vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
 -- No not enter `Q` (Ex) mode
 vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
