@@ -1,6 +1,7 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = {
         "c",
+        "nix",
         "lua",
         "vim",
         "vimdoc",
