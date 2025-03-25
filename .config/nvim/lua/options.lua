@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- GUI options
 -- vim.o.guicursor = ""
 -- vim.o.clipboard = 'unnamedplus'
 
@@ -35,7 +36,7 @@ vim.opt.smartcase = true
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
 -- For filenames that include an at `@` character
--- vim.o.isfname:append("@-@")
+vim.o.isfname:append("@-@")
 
 -- Smooth as butter
 vim.o.updatetime = 300
