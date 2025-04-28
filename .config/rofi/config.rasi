@@ -1,0 +1,39 @@
+configuration {
+/* BASIC OPTIONS */
+    modes: [ run, drun, ssh, filebrowser, keys ];
+    font: "mono 14";
+    steal-focus: true;
+
+/* PRIOR TO CHANGE */
+/*	ssh-client: "ssh";*/
+/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+/*	run-command: "{cmd}";*/
+/*	run-list-command: "";*/
+/*	run-shell-command: "{terminal} -e {cmd}";*/
+/*	ignored-prefixes: "";*/
+/*	sort: false;*/
+
+/* KEY BINDINGS */
+    kb-clear-line: "Control+d";
+    kb-move-front: "Control+a";
+    kb-move-end: "Control+e";
+    kb-move-word-back: "Control+b,Control+Left";
+    kb-move-word-forward: "Control+w,Control+Right";
+    kb-move-char-back: "Left,Shift+h";
+    kb-move-char-forward: "Right,Shift+l";
+    kb-cancel: "Escape,Control+c";
+    kb-remove-to-eol: "Control+k";
+    kb-remove-to-sol: "Control+u";
+    kb-remove-char-forward: "Delete";
+
+
+/* MODES OPTIONS */
+  timeout {
+      action: "kb-cancel";
+      delay:  0;
+  }
+  filebrowser {
+      directories-first: true;
+      sorting-method:    "name";
+  }
+} @theme "DarkBlue"
