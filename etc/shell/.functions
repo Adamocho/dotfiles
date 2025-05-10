@@ -13,6 +13,20 @@ function updatemancache() {
     echo "Cashes rebuilt successfully!"
 }
 
+# Nixos: upgrade flake and download updated packages
+function upgrademynixos() {
+    set -x
+    pushd /etc/nixos
+    nix-channel --update || return 1;
+    nix flake update || return 2;
+    sudo nixos-rebuild switch --flake . || return 3;
+    printf "Your system's flake has been updated and you got new version of your packages";
+    uname -a;
+    popd
+}
+# Update channels, update flakes, switch to new version
+upgrademynixos="cd /etc/nixos && nix-channel --update && "
+
 # Starts an HTTP server for 5 minutes
 # Shares a given location when given an argument or the current dir otherwise 
 function fileserver() {
