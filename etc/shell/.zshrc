@@ -4,9 +4,9 @@
 
 
 # Red-and-green version
-export PS1="%{$(tput setaf 204)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 36)%}%m %{$(tput setaf 7)%}%d %{$(tput sgr0)%}$ "
-# Orange-and-blue version
-# export PS1="%{$(tput setaf 210)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 39)%}%m %{$(tput setaf 7)%}%d %{$(tput sgr0)%}$ "
+#export PS1="%{$(tput setaf 204)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 36)%}%m %{$(tput setaf 7)%}%d %{$(tput sgr0)%}$ "
+# Version with time
+export PS1="%{$(tput setaf 210)%}%n%{$(tput setaf 15)%}@%{$(tput setaf 247)%}%m %{$(tput setaf 7)%}%T %{$(tput setaf 121)%}%d %{$(tput sgr0)%}$ "
 
 # A minimalistic prompt without colors
 # PROMPT="%n@%m:%d%"
