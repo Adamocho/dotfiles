@@ -43,3 +43,7 @@ vim.o.updatetime = 300
 -- Macros go FAST
 vim.o.lazyredraw = true
 
+vim.diagnostic.config({
+  virtual_text = true
+})
+

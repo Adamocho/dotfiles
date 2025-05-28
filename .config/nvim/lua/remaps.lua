@@ -11,6 +11,11 @@ vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set('n', '<leader>l', function()
+  local new_config = not vim.diagnostic.config().virtual_text
+  vim.diagnostic.config({ virtual_text = new_config })
+end, { desc = 'Toggle diagnostics' })
+
 -- commmand mode editing
 vim.keymap.set("c", "<C-A>", "<Home>")
 vim.keymap.set("c", "<C-F>", "<S-Right>")

@@ -12,7 +12,7 @@ return {
         name = "rose-pine",
         priority = 1000,
         config = function()
-            vim.cmd("colorscheme rose-pine")
+          vim.cmd("colorscheme rose-pine")
         end
     },
 
@@ -79,8 +79,6 @@ return {
         }
     },
 
-    "folke/neodev.nvim",
-
     {
         "hrsh7th/nvim-cmp",
         dependencies = {
@@ -94,5 +92,16 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "rafamadriz/friendly-snippets"
         },
+    },
+
+    {
+      "folke/trouble.nvim",
+      opts = {}, -- for default options, refer to the configuration section for custom setup.
+      cmd = "Trouble",
+      config = function()
+        require("trouble").setup {
+          icons_enabled = false,
+        }
+      end
     },
 }
