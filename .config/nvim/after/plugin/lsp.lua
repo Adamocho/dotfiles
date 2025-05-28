@@ -1,52 +1,27 @@
-local on_attach = function(_, bufnr)
+---@param bufnr integer
+local function setup_buffer_keymaps(bufnr)
+  local opts = { noremap = true, silent = true, buffer = bufnr }
 
-  local bufmap = function(keys, func)
-    vim.keymap.set("n", keys, func, { buffer = bufnr })
-  end
-
-  bufmap("<leader>r", vim.lsp.buf.rename)
-  bufmap("<leader>a", vim.lsp.buf.code_action)
-
-  bufmap("gd", vim.lsp.buf.definition)
-  bufmap("gD", vim.lsp.buf.declaration)
-  bufmap("gI", vim.lsp.buf.implementation)
-  bufmap("<leader>D", vim.lsp.buf.type_definition)
-
-  bufmap("K", vim.lsp.buf.hover)
-
-  vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
-    vim.lsp.buf.format()
-  end, {})
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', '<Leader>wa', vim.lsp.buf.add_workspace_folder, opts)
+  vim.keymap.set('n', '<Leader>wr', vim.lsp.buf.remove_workspace_folder, opts)
+  vim.keymap.set('n', '<Leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, opts)
+  vim.keymap.set('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
+  vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
 end
 
--- before cmp_nvim_lsp
--- local capabilities = vim.lsp.protocol.make_client_capabilities()
--- local capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
-local capabilities = vim.tbl_deep_extend(
-      "force",
-      {},
-      vim.lsp.protocol.make_client_capabilities(),
-      require('cmp_nvim_lsp').default_capabilities())
-
-require("mason").setup()
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup {
-			on_attach = on_attach,
-			capabilities = capabilities,
-		}
-	end,
-
-	["lua_ls"] = function()
-		require("neodev").setup()
-		require("lspconfig").lua_ls.setup {
-			on_attach = on_attach,
-			capabilities = capabilities,
-			Lua = {
-				workspace = { checkThridParty = false },
-				telemetry = { enable = false },
-			},
-		}
-	end
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local bufnr = args.buf
+        setup_buffer_keymaps(bufnr)
+    end,
 })
+
