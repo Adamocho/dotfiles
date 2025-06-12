@@ -25,6 +25,7 @@ configuration {
     kb-remove-to-eol: "Control+k";
     kb-remove-to-sol: "Control+u";
     kb-remove-char-forward: "Delete";
+    kb-secondary-copy: "";
 
 
 /* MODES OPTIONS */

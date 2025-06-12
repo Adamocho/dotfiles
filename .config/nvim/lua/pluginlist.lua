@@ -7,23 +7,23 @@ return {
         end
     },
 
-    { -- Theme
-        "rose-pine/neovim",
-        name = "rose-pine",
-        priority = 1000,
-        config = function()
-          vim.cmd("colorscheme rose-pine")
-        end
-    },
+    -- { -- Theme
+    --     "rose-pine/neovim",
+    --     name = "rose-pine",
+    --     priority = 1000,
+    --     config = function()
+    --       vim.cmd("colorscheme rose-pine")
+    --     end
+    -- },
 
     {
         "ellisonleao/gruvbox.nvim",
         -- name="gruvbox",
         priority = 1000,
-        -- config = function()
-        --     vim.cmd("colorscheme gruvbox")
-        -- end
-        config = true
+        config = function()
+            vim.cmd("colorscheme gruvbox")
+        end
+        -- config = true
         -- opts = ...
     },
 
