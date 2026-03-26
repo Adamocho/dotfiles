@@ -46,3 +46,8 @@ alias dmenu_run="dmenu -fn 'Fira Code:size=12' -nb '#191C21' -nf '#F56F6C' -sb '
 alias vimrconf="vim $HOME/.vimrc"
 alias nvimconf="vim $HOME/.config/nvim"
 
+# PDF generation from markdown
+# Requires both pandoc and wkhtmltopdf
+# One also has to specify the input/output files
+alias generatepdf="pandoc --pdf-engine wkhtmltopdf"
+

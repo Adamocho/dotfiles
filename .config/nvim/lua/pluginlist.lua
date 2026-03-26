@@ -7,16 +7,16 @@ return {
         end
     },
 
-    -- { -- Theme
-    --     "rose-pine/neovim",
-    --     name = "rose-pine",
-    --     priority = 1000,
-    --     config = function()
-    --       vim.cmd("colorscheme rose-pine")
-    --     end
-    -- },
+    { -- theme
+        "rose-pine/neovim",
+        name = "rose-pine",
+        priority = 1000,
+        -- config = function()
+        --   vim.cmd("colorscheme rose-pine")
+        -- end
+    },
 
-    {
+    { -- theme
         "ellisonleao/gruvbox.nvim",
         -- name="gruvbox",
         priority = 1000,
@@ -70,13 +70,11 @@ return {
     -- LSP
     {
         "mason-org/mason-lspconfig.nvim",
-        opts = {
-            ensure_installed = { "lua_ls", "rust_analyzer" },
-        },
+        opts = {},
         dependencies = {
             { "mason-org/mason.nvim", opts = {} },
             "neovim/nvim-lspconfig",
-        }
+        },
     },
 
     {
@@ -112,5 +110,9 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope.nvim",
       }
+    },
+
+    {
+      "oxalica/nil"
     },
 }
